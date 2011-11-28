@@ -243,3 +243,14 @@ if has("autocmd")
 	" yaml must be spaces
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSON support
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+au! BufRead,BufNewFile *.json set filetype=json
+
+augroup json_autocmd
+	autocmd!
+	autocmd FileType json set autoindent
+	autocmd FileType json set foldmethod=syntax
+augroup END
