@@ -1,3 +1,6 @@
+" Bootstrap pathogen
+call pathogen#infect()
+
 " Turn off vi compatibility mode
 set nocompatible
 

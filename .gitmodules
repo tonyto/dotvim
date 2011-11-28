@@ -1,3 +1,6 @@
 [submodule "colors"]
 	path = colors
 	url = https://github.com/jnurmine/Zenburn.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
