@@ -1,8 +1,17 @@
-" Bootstrap pathogen
-call pathogen#infect()
-
 " Turn off vi compatibility mode
 set nocompatible
+
+" Bootstrap pathogen
+filetype off
+call pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Filetype plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype on
+filetype indent on
+filetype plugin on
+
 
 " Set 256 color mode
 set t_Co=256
@@ -138,13 +147,6 @@ set foldcolumn=3
 let mapleader=","
 let maplocalleader=","
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Filetype plugin
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype on
-filetype indent on
-filetype plugin on
-
 " Toggle NERDTRee with F2 in command mode
 noremap <f2> :NERDTreeToggle<cr>
 " and in insert mode
@@ -248,13 +250,3 @@ if has("autocmd")
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JSON support
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-au! BufRead,BufNewFile *.json set filetype=json
-
-augroup json_autocmd
-	autocmd!
-	autocmd FileType json set autoindent
-	autocmd FileType json set foldmethod=syntax
-augroup END
