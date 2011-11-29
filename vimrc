@@ -3,6 +3,7 @@ set nocompatible
 
 " Bootstrap pathogen
 filetype off
+call pathogen#helptags()
 call pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
