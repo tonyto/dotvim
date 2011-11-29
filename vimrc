@@ -210,6 +210,8 @@ noremap Q <nop>
 
 " Turn off search highlighting
 nnoremap <leader><space> :noh<cr>
+" Bring up ack ready to searc
+nnoremap <leader>a :Ack!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command Maps
