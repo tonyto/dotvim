@@ -205,6 +205,8 @@ vnoremap \ /\v
 " Move to matching bracket
 nnoremap <tab> %
 vnoremap <tab> %
+" Don't enter ex mode
+noremap Q <nop>
 
 " Turn off search highlighting
 nnoremap <leader><space> :noh<cr>
