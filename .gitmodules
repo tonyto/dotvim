@@ -19,3 +19,9 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/screen"]
+	path = bundle/screen
+	url = https://github.com/ervandew/screen.git
+[submodule "bundle/cucumber"]
+	path = bundle/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
