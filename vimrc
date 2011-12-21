@@ -230,9 +230,20 @@ nnoremap ,t :!(cd %:p:h;ctags *)&
 set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_mode_map = { 'mode': 'active', 
+                         \ 'active_filetypes': [ 'javascript' ],
+                         \ 'passive_filetypes': [] }
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=%{fugitive#statusline()}
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands to run on startup
