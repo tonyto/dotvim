@@ -247,7 +247,10 @@ if has("autocmd")
 	" Custom tab settings
 	" make must be tabs
 	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-	" yaml must be spaces
+	" yaml and coffeescript must be spaces
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd FileType coffee setlocal ts=2 sts=2 sw=2 expandtab
+	" Use javascript filetype for json files
+	autocmd BufRead *.json setlocal filetype=javascript
 endif
 
