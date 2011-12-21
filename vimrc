@@ -66,9 +66,14 @@ set showmode
 " Highlight matching brackets
 set showmatch
 
-" Remember undo history between opening files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Backups, undo and swapfiles
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
-set undodir=~/.vim/undo
+set undodir=~/.vim/tmp/undo,~/tmp,/tmp
+set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
+set directory=~/.vim/tmp/swap/,~/tmp,/tmp
+set noswapfile
 
 " Make backspace work as expected (indent, eol, start)
 set backspace=2
