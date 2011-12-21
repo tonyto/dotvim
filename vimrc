@@ -245,10 +245,32 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=%{fugitive#statusline()}
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline=%f                              " Path
+set statusline+=%m                             " Modified flag
+set statusline+=%r                             " Readonly flag
+set statusline+=%{fugitive#statusline()}       " Show git repo status
+
+set statusline+=%#error#                       " Error highlight
+set statusline+=%{SyntasticStatuslineFlag()}   " Show syntastic error status
+set statusline+=%*                             " Reset highlighting
+
+set statusline+=%=                             " Right align
+
+set statusline+=(
+set statusline+=%{&ff}                         " Line ending format
+set statusline+=/
+set statusline+=%{strlen(&fenc)?&fenc:&enc}    " Encoding
+set statusline+=/
+set statusline+=%{&ft}                         " Filetype
+set statusline+=)
+
+" Always show status line
+set laststatus=2
+
+augroup ft_statusline_background_colour
+	au InsertEnter * hi StatusLine ctermfg=15 guifg=#FF3145
+	au InsertLeave * hi StatusLine ctermfg=236 guifg=#CD5907
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands to run on startup
