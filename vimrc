@@ -1,70 +1,42 @@
-" Turn off vi compatibility mode
-set nocompatible
-
-" Bootstrap pathogen
-filetype off
-call pathogen#helptags()
-call pathogen#infect()
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" Filetype plugin
+" Bootstrap plugins and filetypes
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype on
+set nocompatible            " Turn off vi compatibility mode
+filetype off                " Interferes with Pathogen, so turn off
+call pathogen#helptags()    " Generate help tags for plugins
+call pathogen#infect()      " Load all the plugins
+filetype on                 " Reenable filetype
 filetype indent on
 filetype plugin on
-
-
-" Set 256 color mode
-set t_Co=256
-
-" Default to UTF-8
-set encoding=utf-8
-
-" start scrolling 2 lines from screen edge
-set scrolloff=2
-
-" Enable syntax highlighting
-syntax on
-colorscheme zenburn
-
-" Allow vim to manage multiple buffers effectively
-set hidden
-
-" Show 80 char column in light grey
-set colorcolumn=80
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
-
-" Increase command history size
-set history=1000
-
-" Improve tab completion for files and directories to show number of options
-set wildmenu
-" Make tab completion behave like the shell completing only up to the point of
-" ambiguity
-set wildmode=list:longest
-
-" Set the window title in the terminal
-set title
 
 " Use the matchit macro to enable switching between open close tags and
 " if/elsif/else/end with %
 runtime macros/matchit.vim
 
-" Show the ruler, incomplete search matches and incomplete commands
-set ruler
-set showcmd
-set incsearch
-" Keep search highlight after complete
-set hlsearch
-
-" Show line numbers
-set relativenumber
-
-" Show the current mode in the last line
-set showmode
-
-" Highlight matching brackets
-set showmatch
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Basic stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+set history=1000          " Increase command history size
+set ruler                 " Show the ruler
+set incsearch             " Incomplete search matches
+set hlsearch              " Keep search highlight after complete
+set relativenumber        " Show line numbers
+set showmode              " Show the current mode in the last line
+set showcmd               " Show the current command in the last line
+set showmatch             " Highlight matching brackets
+set title                 " Set the window title in the terminal
+set wildmenu              " Improve tab completion menu
+set wildmode=list:longest " Tab complete longest common string and show list
+set t_Co=256              " Set 256 color mode
+set encoding=utf-8        " Default to UTF-8
+set scrolloff=2           " start scrolling 2 lines from screen edge
+syntax on                 " Enable syntax highlighting
+colorscheme zenburn       " Make it pretty
+set hidden                " Hide rather than close abandoned buffers
+set colorcolumn=80        " Show 80 char column in light grey
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+set backspace=2           " Make backspace work for indent, eol, start
+set shortmess=atI         " Shorten the large interruptive prompts
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backups, undo and swapfiles
@@ -74,12 +46,6 @@ set undodir=~/.vim/tmp/undo,~/tmp,/tmp
 set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
 set directory=~/.vim/tmp/swap/,~/tmp,/tmp
 set noswapfile
-
-" Make backspace work as expected (indent, eol, start)
-set backspace=2
-
-" Shorten the large interruptive prompts
-set shortmess=atI
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation and whitespace
