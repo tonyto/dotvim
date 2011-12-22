@@ -54,7 +54,7 @@ set dictionary=/usr/share/dict/words
 set colorcolumn=80        " Show 80 char column in light grey
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 " Disable colorcolumn in the quickfix buffers
-au BufRead,BufNewFile * if &buftype == 'quickfix'|setlocal colorcolumn= |endif
+au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backups, undo and swapfiles
