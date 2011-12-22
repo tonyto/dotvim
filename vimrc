@@ -229,17 +229,17 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable toggling of the quickfix window
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-function! ToggleQuickFix() 
-	if !exists("g:quickfix_is_open")
-		let g:quickfix_is_open = 0
-	endif
+if !exists("g:quickfix_is_open")
+	let g:quickfix_is_open = 0
+endif
 
+function! ToggleQuickFix()
 	if g:quickfix_is_open == 1
 		let g:quickfix_is_open = 0
 		cclose
 	else
 		let g:quickfix_is_open = 1
-		copen
+		botright copen
 	endif
 endfunction
 
