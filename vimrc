@@ -18,6 +18,8 @@ runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000          " Increase command history size
 set ruler                 " Show the ruler
+set cursorline            " Highlight the line under the cursor
+set cursorcolumn          " Highlight the column under the column
 set incsearch             " Incomplete search matches
 set hlsearch              " Keep search highlight after complete
 set relativenumber        " Show line numbers
