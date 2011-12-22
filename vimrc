@@ -18,8 +18,6 @@ runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000          " Increase command history size
 set ruler                 " Show the ruler
-set cursorline            " Highlight the line under the cursor
-set nocursorcolumn          " Highlight the column under the column
 set incsearch             " Incomplete search matches
 set hlsearch              " Keep search highlight after complete
 set relativenumber        " Show line numbers
@@ -49,6 +47,14 @@ set splitbelow            " Open new splits below current window
 set splitright            " Open new vsplits to the right
 set autowrite             " Autowrite files when leaving
 set dictionary=/usr/share/dict/words
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Cursor settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cursorline                       " Highlight the line under the cursor
+set nocursorcolumn                   " Don't Highlight the column
+au WinEnter * setlocal cursorline    " Turn on cursorline on focus
+au WinLeave * setlocal nocursorline  " And off on losing focus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color column settings
