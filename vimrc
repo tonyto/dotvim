@@ -161,49 +161,58 @@ noremap <leader>l :set list!<cr>
 nnoremap <leader>W :call <SID>StripTrailingWhitespaces()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" Default map overrides
+" Window manipulation keymaps
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quicker window navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap + <C-w>+
-noremap - <C-w>-
-nnoremap <leader>w <C-w>s<C-w>j
+noremap <C-h>             <C-w>h
+noremap <C-j>             <C-w>j
+noremap <C-k>             <C-w>k
+noremap <C-l>             <C-w>l
+noremap +                 <C-w>+
+noremap -                 <C-w>-
+" Split window and move down into new window
+nnoremap <leader>w        <C-w>s<C-w>j
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mode switching keymaps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Exit insert mode
-inoremap jk <esc>
-inoremap <esc> <NOP>
-inoremap <c-c> <NOP>
+inoremap jk               <esc>
+inoremap <esc>            <NOP>
+inoremap <c-c>            <NOP>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap annoying default keymaps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unmap the arrow keys
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-" Unmap the help shortcut key
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+inoremap <Up>             <NOP>
+inoremap <Down>           <NOP>
+inoremap <Left>           <NOP>
+inoremap <Right>          <NOP>
+noremap <Up>              <NOP>
+noremap <Down>            <NOP>
+noremap <Left>            <NOP>
+noremap <Right>           <NOP>
+" Unmap the infuriating help shortcut key
+inoremap <F1>             <ESC>
+nnoremap <F1>             <ESC>
+vnoremap <F1>             <ESC>
 " Move up and down by screenline instead of file line
-nnoremap j gj
-nnoremap k gk
+nnoremap j                gj
+nnoremap k                gk
 " Fix vim's regexp search to use perl regexps
-nnoremap / /\v
-vnoremap \ /\v
+nnoremap /                /\v
+vnoremap \                /\v
 " Move to matching bracket
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <tab>            %
+vnoremap <tab>            %
 " Don't enter ex mode
-noremap Q <nop>
+noremap Q                 <nop>
 
 " Turn off search highlighting
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space>  :noh<cr>
 " Bring up ack ready to searc
-nnoremap <leader>a :Ack!
+nnoremap <leader>a        :Ack!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto close character sequences
