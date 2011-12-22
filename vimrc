@@ -206,6 +206,26 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ack!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto close character sequences
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto append closing curly braces and skip over closing braces
+inoremap {            {}<Left>
+inoremap {<CR>        {<CR>}<ESC>O
+inoremap {{           {
+inoremap {}           {}
+inoremap <expr> }     strpart(getline('.'), col('.') - 1, 1) == "}"
+                     \? "\<Right>" : "}"
+" Parentheses
+inoremap (            ()<Left>
+inoremap <expr> )     strpart(getline('.'), col('.') - 1, 1) == ")"
+                     \? "\<Right>" : ")"
+" C-style comments
+inoremap /*           /**/<Left><Left>
+inoremap /*<Space>    /*<Space><Space>*/<Left><Left><Left>
+inoremap /*<CR>       /*<CR>*/<Esc>O
+inoremap <Leader>/*   /*
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command Maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable saving readonly files with sudo
@@ -221,7 +241,7 @@ set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_mode_map = { 'mode': 'active', 
+let g:syntastic_mode_map = { 'mode': 'active',
                          \ 'active_filetypes': [ 'javascript' ],
                          \ 'passive_filetypes': [] }
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
