@@ -339,6 +339,8 @@ set statusline+=%*                             " Reset highlighting
 
 set statusline+=%=                             " Right align
 
+set statusline+=%c,                            " Cursor column
+set statusline+=%l/%L                          " Cursor line / total lines
 set statusline+=(
 set statusline+=%{&ff}                         " Line ending format
 set statusline+=/
