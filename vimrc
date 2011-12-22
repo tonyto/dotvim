@@ -129,7 +129,8 @@ set mouse=a
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Folding
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldcolumn=3
+set foldlevelstart=99               " Open all folds
+set foldcolumn=3                    " Show 3 levels
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymaps
@@ -303,6 +304,30 @@ set laststatus=2
 augroup ft_statusline_background_colour
 	au InsertEnter * hi StatusLine ctermfg=15 guifg=#FF3145
 	au InsertLeave * hi StatusLine ctermfg=236 guifg=#CD5907
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Css and less files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup ft_css
+	au!
+
+	au BufNewFile,BufRead *.less setlocal filetype=less
+
+	" Make folding work
+	au FileType less,css setlocal foldmethod=marker
+	au FileType less,css setlocal foldmarker={,}
+
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Javascript files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup ft_javascript
+	au!
+
+	au FileType javascript setlocal foldmethod=marker
+	au FileType javascript setlocal foldmarker={,}
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
