@@ -42,6 +42,13 @@ set colorcolumn=80        " Show 80 char column in light grey
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set backspace=2           " Make backspace work for indent, eol, start
 set shortmess=atI         " Shorten the large interruptive prompts
+set ttyfast               " Smoother redrawing with multiple windows
+set lazyredraw            " Suspend redrawing while running macros
+set matchtime=3           " Jump to matching paren for a briefer time
+set splitbelow            " Open new splits below current window
+set splitright            " Open new vsplits to the right
+set autowrite             " Autowrite files when leaving
+set dictionary=/usr/share/dict/words
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backups, undo and swapfiles
