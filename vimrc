@@ -131,8 +131,8 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
-" Allow Mouse selection and navigation
-set mouse=a
+" Allow Mouse in normal and visual mode
+set mouse=nv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Folding
