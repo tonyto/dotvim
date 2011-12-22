@@ -288,24 +288,34 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable toggling of the quickfix window
+" Enable toggling of the quickfix and errors window
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-if !exists("g:quickfix_is_open")
-	let g:quickfix_is_open = 0
-endif
-
-function! ToggleQuickFix()
-	if g:quickfix_is_open == 1
-		let g:quickfix_is_open = 0
-		cclose
+function! ToggleErrors()
+	if exists("w:is_error_window")
+		unlet w:is_error_window
+		exec "q"
 	else
-		let g:quickfix_is_open = 1
-		botright copen
+		exec "Errors"
+		botright lopen
+		let w:is_error_window = 1
 	endif
 endfunction
 
-command! -nargs=* ToggleQuickFix call ToggleQuickFix()
+function! ToggleQuickFix(forced)
+	if exists('g:quickfix_is_open') && a:forced == 0
+		unlet g:quickfix_is_open
+		cclose
+	else
+		botright copen 10
+		let g:quickfix_is_open = bufnr("$")
+	endif
+endfunction
+
+command! -bang -nargs=? ToggleQuickFix call ToggleQuickFix(<bang>0)
+command! ToggleErrors call ToggleErrors()
+
 :noremap <F4> :ToggleQuickFix<CR>
+:noremap <F3> :ToggleErrors<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
