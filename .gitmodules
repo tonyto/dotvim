@@ -37,3 +37,6 @@
 [submodule "bundle/rainbow-parentheses"]
 	path = bundle/rainbow-parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
