@@ -38,8 +38,6 @@ set scrolloff=2           " start scrolling 2 lines from screen edge
 syntax on                 " Enable syntax highlighting
 colorscheme zenburn       " Make it pretty
 set hidden                " Hide rather than close abandoned buffers
-set colorcolumn=80        " Show 80 char column in light grey
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set backspace=2           " Make backspace work for indent, eol, start
 set shortmess=atI         " Shorten the large interruptive prompts
 set ttyfast               " Smoother redrawing with multiple windows
@@ -49,6 +47,14 @@ set splitbelow            " Open new splits below current window
 set splitright            " Open new vsplits to the right
 set autowrite             " Autowrite files when leaving
 set dictionary=/usr/share/dict/words
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color column settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+set colorcolumn=80        " Show 80 char column in light grey
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+" Disable colorcolumn in the quickfix buffers
+au BufRead,BufNewFile * if &buftype == 'quickfix'|setlocal colorcolumn= |endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backups, undo and swapfiles
