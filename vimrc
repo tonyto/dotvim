@@ -221,6 +221,26 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable toggling of the quickfix window
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ToggleQuickFix() 
+	if !exists("g:quickfix_is_open")
+		let g:quickfix_is_open = 0
+	endif
+
+	if g:quickfix_is_open == 1
+		let g:quickfix_is_open = 0
+		cclose
+	else
+		let g:quickfix_is_open = 1
+		copen
+	endif
+endfunction
+
+command! -nargs=* ToggleQuickFix call ToggleQuickFix()
+:noremap <F4> :ToggleQuickFix<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=%f                              " Path
