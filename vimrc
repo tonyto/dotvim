@@ -19,7 +19,7 @@ runtime macros/matchit.vim
 set history=1000          " Increase command history size
 set ruler                 " Show the ruler
 set cursorline            " Highlight the line under the cursor
-set cursorcolumn          " Highlight the column under the column
+set nocursorcolumn          " Highlight the column under the column
 set incsearch             " Incomplete search matches
 set hlsearch              " Keep search highlight after complete
 set relativenumber        " Show line numbers
@@ -54,7 +54,7 @@ set dictionary=/usr/share/dict/words
 " Color column settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=80        " Show 80 char column in light grey
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+highlight ColorColumn ctermbg=239 guibg=#4f4f4f
 " Disable colorcolumn in the quickfix buffers
 au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
 
