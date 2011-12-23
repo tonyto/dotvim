@@ -150,8 +150,6 @@ let maplocalleader=","
 noremap <f2> :NERDTreeToggle<cr>
 " and in insert mode
 inoremap <f2> :NERDTreeToggle<cr>i
-" Move line down one
-nnoremap - ddp
 " Open .vimrc in a new split for quick editing
 nnoremap <leader>ev :split $MYVIMRC<cr>
 " Source .vimrc in current window
