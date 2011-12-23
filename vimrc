@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bootstrap plugins and filetypes
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Bootstrap plugins and filetypes {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible            " Turn off vi compatibility mode
 filetype off                " Interferes with Pathogen, so turn off
 call pathogen#helptags()    " Generate help tags for plugins
@@ -13,9 +13,9 @@ filetype plugin on
 " if/elsif/else/end with %
 runtime macros/matchit.vim
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basic stuff
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Basic stuff {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000          " Increase command history size
 set ruler                 " Show the ruler
 set incsearch             " Incomplete search matches
@@ -48,34 +48,34 @@ set splitright            " Open new vsplits to the right
 set autowrite             " Autowrite files when leaving
 set dictionary=/usr/share/dict/words
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Cursor settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Cursor settings {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cursorline                       " Highlight the line under the cursor
 set nocursorcolumn                   " Don't Highlight the column
 au WinEnter * setlocal cursorline    " Turn on cursorline on focus
 au WinLeave * setlocal nocursorline  " And off on losing focus
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color column settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Color column settings {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=80        " Show 80 char column in light grey
 highlight ColorColumn ctermbg=239 guibg=#4f4f4f
 " Disable colorcolumn in the quickfix buffers
 au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Backups, undo and swapfiles
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Backups, undo and swapfiles {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
 set undodir=~/.vim/tmp/undo,~/tmp,/tmp
 set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
 set directory=~/.vim/tmp/swap/,~/tmp,/tmp
 set noswapfile
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation and whitespace
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Indentation and whitespace {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Automate resizing tabs
 " See http://vimcasts.org/episodes/tabs-and-spaces/
 command! -nargs=* Stab call Stab()
@@ -134,15 +134,15 @@ set shiftwidth=4
 " Allow Mouse in normal and visual mode
 set mouse=nv
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Folding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Folding {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldlevelstart=99               " Open all folds
 set foldcolumn=3                    " Show 3 levels
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Keymaps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Keymaps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
 let maplocalleader=","
 
@@ -159,17 +159,17 @@ nnoremap H 0
 " Go to end of line
 nnoremap L $
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Whitespace keymaps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Whitespace keymaps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle whitespace
 noremap <leader>l :set list!<cr>
 " Strip Trailing
 nnoremap <leader>W :call <SID>StripTrailingWhitespaces()<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Window manipulation keymaps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Window manipulation keymaps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quicker window navigation
 noremap <C-h>             <C-w>h
 noremap <C-j>             <C-w>j
@@ -180,17 +180,17 @@ noremap -                 <C-w>-
 " Split window and move down into new window
 nnoremap <leader>w        <C-w>s<C-w>j
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mode switching keymaps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Mode switching keymaps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Exit insert mode
 inoremap jk               <esc>
 inoremap <esc>            <NOP>
 inoremap <c-c>            <NOP>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap annoying default keymaps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Remap annoying default keymaps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unmap the arrow keys
 inoremap <Up>             <NOP>
 inoremap <Down>           <NOP>
@@ -221,9 +221,9 @@ nnoremap <leader><space>  :noh<cr>
 " Bring up ack ready to searc
 nnoremap <leader>a        :Ack!
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto close character sequences
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Auto close character sequences {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto append closing curly braces and skip over closing braces
 inoremap {            {}<Left>
 inoremap {<CR>        {<CR>}<ESC>O
@@ -241,30 +241,30 @@ inoremap /*<Space>    /*<Space><Space>*/<Left><Left><Left>
 inoremap /*<CR>       /*<CR>*/<Esc>O
 inoremap <Leader>/*   /*
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command Maps
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Command Maps {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable saving readonly files with sudo
 cmap w!! %!sudo tee > /dev/null %
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Gentags config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Gentags config {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap ,t :!(cd %:p:h;ctags *)&
 set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Syntastic configuration {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_mode_map = { 'mode': 'active',
                          \ 'active_filetypes': [ 'javascript' ],
                          \ 'passive_filetypes': [] }
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rainbow Parentheses confiugration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Rainbow Parentheses confiugration {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>R :RainbowParenthesesToggle<cr>
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -293,9 +293,9 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable toggling of the quickfix and errors window
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Enable toggling of the quickfix and errors window {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleErrors()
 	if exists("w:is_error_window")
 		unlet w:is_error_window
@@ -323,9 +323,9 @@ command! ToggleErrors call ToggleErrors()
 :noremap <F4> :ToggleQuickFix<CR>
 :noremap <F3> :ToggleErrors<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Statusline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Statusline {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=%f                              " Path
 set statusline+=%m                             " Modified flag
 set statusline+=%r                             " Readonly flag
@@ -355,9 +355,9 @@ augroup ft_statusline_background_colour
 	au InsertLeave * hi StatusLine ctermfg=236 guifg=#CD5907
 augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Css and less files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Css and less files {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup ft_css
 	au!
 
@@ -366,12 +366,11 @@ augroup ft_css
 	" Make folding work
 	au FileType less,css setlocal foldmethod=marker
 	au FileType less,css setlocal foldmarker={,}
-
 augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Javascript files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Javascript files {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup ft_javascript
 	au!
 
@@ -379,9 +378,9 @@ augroup ft_javascript
 	au FileType javascript setlocal foldmarker={,}
 augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Commands to run on startup
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Commands to run on startup {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
 	autocmd VimEnter * NERDTree
 	autocmd VimEnter * wincmd p
