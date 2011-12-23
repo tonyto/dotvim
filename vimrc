@@ -379,6 +379,16 @@ augroup ft_javascript
 augroup END
 
 " }}}
+" Vimscript files {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup ft_vim
+	au!
+
+	au FileType vim setlocal foldmethod=marker
+	au FileType vim setlocal foldmarker={,}
+augroup END
+
+" }}}
 " Commands to run on startup {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
