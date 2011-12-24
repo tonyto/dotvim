@@ -20,14 +20,13 @@ set history=1000          " Increase command history size
 set ruler                 " Show the ruler
 set incsearch             " Incomplete search matches
 set hlsearch              " Keep search highlight after complete
-set relativenumber        " Show line numbers
 set showmode              " Show the current mode in the last line
 set showcmd               " Show the current command in the last line
 set showmatch             " Highlight matching brackets
 set title                 " Set the window title in the terminal
 set wildmenu              " Improve tab completion menu
 set wildmode=list:longest " Tab complete longest common string and show list
-set t_Co=256              " Set 256 color mode
+"set t_Co=256              " Set 256 color mode
 set wildignore+=.git,.hg,.svn                    " Version control
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -36,7 +35,7 @@ set wildignore+=*.sw?                            " Vim swap files
 set encoding=utf-8        " Default to UTF-8
 set scrolloff=2           " start scrolling 2 lines from screen edge
 syntax on                 " Enable syntax highlighting
-colorscheme zenburn       " Make it pretty
+"colorscheme zenburn       " Make it pretty
 set hidden                " Hide rather than close abandoned buffers
 set backspace=2           " Make backspace work for indent, eol, start
 set shortmess=atI         " Shorten the large interruptive prompts
@@ -51,18 +50,18 @@ set dictionary=/usr/share/dict/words
 " }}}
 " Cursor settings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set cursorline                       " Highlight the line under the cursor
-set nocursorcolumn                   " Don't Highlight the column
-au WinEnter * setlocal cursorline    " Turn on cursorline on focus
-au WinLeave * setlocal nocursorline  " And off on losing focus
+"set cursorline                       " Highlight the line under the cursor
+"set nocursorcolumn                   " Don't Highlight the column
+"au WinEnter * setlocal cursorline    " Turn on cursorline on focus
+"au WinLeave * setlocal nocursorline  " And off on losing focus
 
 " }}}
 " Color column settings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=80        " Show 80 char column in light grey
-highlight ColorColumn ctermbg=239 guibg=#4f4f4f
+"set colorcolumn=80        " Show 80 char column in light grey
+"highlight ColorColumn ctermbg=239 guibg=#4f4f4f
 " Disable colorcolumn in the quickfix buffers
-au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+"au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
 
 " }}}
 " Backups, undo and swapfiles {{{
