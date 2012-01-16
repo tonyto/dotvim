@@ -26,7 +26,7 @@ set showmatch             " Highlight matching brackets
 set title                 " Set the window title in the terminal
 set wildmenu              " Improve tab completion menu
 set wildmode=list:longest " Tab complete longest common string and show list
-"set t_Co=256              " Set 256 color mode
+set t_Co=256              " Set 256 color mode
 set wildignore+=.git,.hg,.svn                    " Version control
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -35,7 +35,7 @@ set wildignore+=*.sw?                            " Vim swap files
 set encoding=utf-8        " Default to UTF-8
 set scrolloff=2           " start scrolling 2 lines from screen edge
 syntax on                 " Enable syntax highlighting
-"colorscheme zenburn       " Make it pretty
+colorscheme zenburn       " Make it pretty
 set hidden                " Hide rather than close abandoned buffers
 set backspace=2           " Make backspace work for indent, eol, start
 set shortmess=atI         " Shorten the large interruptive prompts
@@ -66,11 +66,11 @@ set dictionary=/usr/share/dict/words
 " }}}
 " Backups, undo and swapfiles {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set undofile
-set undodir=~/.vim/tmp/undo,~/tmp,/tmp
-set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
-set directory=~/.vim/tmp/swap/,~/tmp,/tmp
-set noswapfile
+"set undofile
+"set undodir=~/.vim/tmp/undo,~/tmp,/tmp
+"set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
+"set directory=~/.vim/tmp/swap/,~/tmp,/tmp
+"set noswapfile
 
 " }}}
 " Indentation and whitespace {{{
@@ -180,25 +180,8 @@ noremap -                 <C-w>-
 nnoremap <leader>w        <C-w>s<C-w>j
 
 " }}}
-" Mode switching keymaps {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Exit insert mode
-"inoremap jk               <esc>
-"inoremap <esc>            <NOP>
-inoremap <c-c>            <NOP>
-
-" }}}
 " Remap annoying default keymaps {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Unmap the arrow keys
-"inoremap <Up>             <NOP>
-"inoremap <Down>           <NOP>
-"inoremap <Left>           <NOP>
-"inoremap <Right>          <NOP>
-"noremap <Up>              <NOP>
-"noremap <Down>            <NOP>
-"noremap <Left>            <NOP>
-"noremap <Right>           <NOP>
 " Unmap the infuriating help shortcut key
 inoremap <F1>             <ESC>
 nnoremap <F1>             <ESC>
