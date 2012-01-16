@@ -293,6 +293,17 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 " }}}
+" Powerline Configuration {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:Powerline_symbols = 'fancy'
+
+" }}}
+" NERDTree configuration {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" }}}
 " Enable toggling of the quickfix and errors window {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleErrors()
