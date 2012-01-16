@@ -183,22 +183,22 @@ nnoremap <leader>w        <C-w>s<C-w>j
 " Mode switching keymaps {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Exit insert mode
-inoremap jk               <esc>
-inoremap <esc>            <NOP>
+"inoremap jk               <esc>
+"inoremap <esc>            <NOP>
 inoremap <c-c>            <NOP>
 
 " }}}
 " Remap annoying default keymaps {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unmap the arrow keys
-inoremap <Up>             <NOP>
-inoremap <Down>           <NOP>
-inoremap <Left>           <NOP>
-inoremap <Right>          <NOP>
-noremap <Up>              <NOP>
-noremap <Down>            <NOP>
-noremap <Left>            <NOP>
-noremap <Right>           <NOP>
+"inoremap <Up>             <NOP>
+"inoremap <Down>           <NOP>
+"inoremap <Left>           <NOP>
+"inoremap <Right>          <NOP>
+"noremap <Up>              <NOP>
+"noremap <Down>            <NOP>
+"noremap <Left>            <NOP>
+"noremap <Right>           <NOP>
 " Unmap the infuriating help shortcut key
 inoremap <F1>             <ESC>
 nnoremap <F1>             <ESC>
