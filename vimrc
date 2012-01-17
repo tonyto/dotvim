@@ -372,6 +372,11 @@ augroup ft_javascript
 augroup END
 
 " }}}
+" vim Ruby configuration{{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+compiler ruby
+
+" }}}
 " Vimscript files {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup ft_vim
