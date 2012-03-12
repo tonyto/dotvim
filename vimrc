@@ -18,6 +18,7 @@ runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000          " Increase command history size
 set ruler                 " Show the ruler
+set nu                    " Line number
 set incsearch             " Incomplete search matches
 set hlsearch              " Keep search highlight after complete
 set showmode              " Show the current mode in the last line
@@ -46,31 +47,6 @@ set splitbelow            " Open new splits below current window
 set splitright            " Open new vsplits to the right
 set autowrite             " Autowrite files when leaving
 set dictionary=/usr/share/dict/words
-
-" }}}
-" Cursor settings {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set cursorline                       " Highlight the line under the cursor
-"set nocursorcolumn                   " Don't Highlight the column
-"au WinEnter * setlocal cursorline    " Turn on cursorline on focus
-"au WinLeave * setlocal nocursorline  " And off on losing focus
-
-" }}}
-" Color column settings {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set colorcolumn=80        " Show 80 char column in light grey
-"highlight ColorColumn ctermbg=239 guibg=#4f4f4f
-" Disable colorcolumn in the quickfix buffers
-"au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
-
-" }}}
-" Backups, undo and swapfiles {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set undofile
-"set undodir=~/.vim/tmp/undo,~/tmp,/tmp
-"set backupdir=~/.vim/tmp/backup,~/tmp,/tmp
-"set directory=~/.vim/tmp/swap/,~/tmp,/tmp
-"set noswapfile
 
 " }}}
 " Indentation and whitespace {{{
