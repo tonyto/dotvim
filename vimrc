@@ -102,9 +102,10 @@ set listchars=tab:>-,trail:-
 set list
 " Set visible character size of tabstops to 4 and make shift keys
 " shift by 4 characters
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Allow Mouse in normal and visual mode
 set mouse=nv
@@ -254,7 +255,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " }}}
 " Powerline Configuration {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 
 " }}}
 " NERDTree configuration {{{
