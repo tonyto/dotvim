@@ -25,14 +25,7 @@ set showmode              " Show the current mode in the last line
 set showcmd               " Show the current command in the last line
 set showmatch             " Highlight matching brackets
 set title                 " Set the window title in the terminal
-set wildmenu              " Improve tab completion menu
-set wildmode=list:longest " Tab complete longest common string and show list
 set t_Co=256              " Set 256 color mode
-set wildignore+=.git,.hg,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.sw?                            " Vim swap files
 set encoding=utf-8        " Default to UTF-8
 set scrolloff=2           " start scrolling 2 lines from screen edge
 syntax on                 " Enable syntax highlighting
@@ -47,6 +40,16 @@ set splitbelow            " Open new splits below current window
 set splitright            " Open new vsplits to the right
 set autowrite             " Autowrite files when leaving
 set dictionary=/usr/share/dict/words
+
+set wildmenu wildmode=full completeopt+=longest
+set wildignore+=node_modules,classes,target,Maildir,tmp
+set wildignore+=.git,.hg,.svn,.bzr,CVS           " vcs files
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.sw?                            " Vim swap files
+let g:CommandTAcceptSelectionSplitMap='<C-w>'
+set directory=/var/tmp//
 
 " }}}
 " Indentation and whitespace {{{
