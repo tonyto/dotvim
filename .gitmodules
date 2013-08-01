@@ -64,6 +64,9 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/slim"]
-	path = bundle/slim
-	url = git://github.com/slim-template/vim-slim.git
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = https://github.com/rking/ag.vim
+[submodule "bundle/rspec"]
+	path = bundle/rspec
+	url = git://github.com/skwp/vim-rspec.git
