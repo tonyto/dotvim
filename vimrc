@@ -373,6 +373,9 @@ if has("autocmd")
 	autocmd VimEnter * NERDTree
 	autocmd VimEnter * wincmd p
 
+  " Strip whitespace on save
+  autocmd BufWritePre *.rb :%s/\s\+$//e
+
 	" Save on losing focus
 	autocmd FocusLost * :wa
 
